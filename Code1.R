@@ -1,5 +1,7 @@
 install.packages("plyr")
+install.packages("plotly")
 library(plyr)
+library(plotly)
 primaryIncome <- read.csv("Primary.Income.csv")
 secondaryIncome <- read.csv("Secondary.Income.csv")
 serviceExport <- read.csv("Service.Export.csv")
@@ -11,5 +13,11 @@ balanceOfPayments$Avg..Urals....bbl <- NULL
 oilData <- join(tradeExport, tradeImport, by=c("EoP","Period","Trend"))
 oilData$Trade.export...bn <- oilData$Trade.import...bn <- NULL
 balanceOfPayments$EoP <- as.Date(balanceOfPayments$EoP, "%m/%d/%y")
-date <- format(balanceOfPayments$EoP,'%Y')
-barplot(balanceOfPayments$Primary.income...bn, ylim=c(0,10), main="Primary Income, 2005-2017", xlab="date", ylab="bn, USD", names.arg=c(date))
+date <- unique((format(balanceOfPayments$EoP,'%Y')))
+#barplot(balanceOfPayments$Primary.income...bn, ylim=c(0,10), main="Primary Income, 2005-2017", xlab="date", ylab="bn, USD", col=c(date),  beside=TRUE)
+p <- plot_ly(
+  x = c(dates),
+  y = c(balanceOfPayments$Primary.income...bn),
+  name = "Primary Income, 2005-2017",
+  type = "bar"
+)
