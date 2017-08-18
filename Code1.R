@@ -10,8 +10,7 @@ balanceOfPayments <- join(primaryIncome,secondaryIncome, by=c("EoP","Period","Tr
 balanceOfPayments$Avg..Urals....bbl <- NULL
 oilData <- join(tradeExport, tradeImport, by=c("EoP","Period","Trend"))
 oilData$Trade.export...bn <- oilData$Trade.import...bn <- NULL
-balanceOfPayments$EoP <- as.Date(balanceOfPayments$EoP, "%m/%d/%y")
-dates <- ((format(balanceOfPayments$EoP,'%Y')))
+dates <- as.Date(balanceOfPayments$EoP, "%m/%d/%y")
 p <- plot_ly(
   x = c(dates),
   y = c(balanceOfPayments$Primary.income...bn),
