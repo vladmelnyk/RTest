@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1503091401830.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6421AE46",
+    "lastKnownWriteTime" : 0,
+    "last_content_update" : 1503091401830,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "843E5B02",
+        "caption" : "balanceOfPayments",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=balanceOfPayments&cache_key=843E5B02",
+        "displayedObservations" : "50",
+        "environment" : "",
+        "object" : "balanceOfPayments",
+        "preview" : "0",
+        "totalObservations" : "50",
+        "variables" : "8"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

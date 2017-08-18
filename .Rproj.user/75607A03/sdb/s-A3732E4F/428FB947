@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1503090296358.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "428FB947",
+    "lastKnownWriteTime" : 4323845376,
+    "last_content_update" : 1503090296358,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "532669E5",
+        "caption" : "Primary.Income",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=Primary.Income&cache_key=532669E5",
+        "displayedObservations" : 50,
+        "environment" : "",
+        "object" : "Primary.Income",
+        "preview" : 0,
+        "totalObservations" : 50,
+        "variables" : 5
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
