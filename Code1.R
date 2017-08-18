@@ -14,7 +14,9 @@ dates <- as.Date(balanceOfPayments$EoP, "%m/%d/%y")
 p <- plot_ly(
   x = c(dates),
   y = c(balanceOfPayments$Primary.income...bn),
-  name = "Primary Income, 2005-2017",
+  name = "Primary Income",
   type = "bar"
-)
+)%>%
+  layout(yaxis = list(title = 'usd (bn)'), barmode = 'group') %>%
+  layout(xaxis = list(title = 'Primary Income, 2005-2017'), barmode = 'group')
 p
