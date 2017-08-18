@@ -1,14 +1,15 @@
 install.packages("plyr")
 library(plyr)
-Primary.Income <- read.csv("Primary.Income.csv")
-Secondary.Income <- read.csv("Secondary.Income.csv")
-Service.Export <- read.csv("Service.Export.csv")
-Service.Import <- read.csv("Service.Import.csv")
-Trade.Export <- read.csv("Trade.Export.csv")
-Trade.Import <- read.csv("Trade.Import.csv")
-BOPData <- join(Primary.Income,Secondary.Income, by=c("EoP","Period","Trend"))
-BOPData$Avg..Urals....bbl <- NULL
-Oildata <- join(Trade.Export, Trade.Import, by=c("EoP","Period","Trend"))
-Oildata$Trade.export...bn <- Oildata$Trade.import...bn <- NULL
-BOPData$EoP <- as.Date(BOPData$EoP, "%m/%d/%y")
-barplot(BOPData$Primary.income...bn, main="Primary Income, 2005-2017", xlab="Quarters", ylab="bn USD", names.arg=c(BOPData$EoP))
+primaryIncome <- read.csv("Primary.Income.csv")
+secondaryIncome <- read.csv("Secondary.Income.csv")
+serviceExport <- read.csv("Service.Export.csv")
+serviceImport <- read.csv("Service.Import.csv")
+tradeExport <- read.csv("Trade.Export.csv")
+tradeImport <- read.csv("Trade.Import.csv")
+balanceOfPayments <- join(primaryIncome,secondaryIncome, by=c("EoP","Period","Trend"))
+balanceOfPayments$Avg..Urals....bbl <- NULL
+oilData <- join(tradeExport, tradeImport, by=c("EoP","Period","Trend"))
+oilData$Trade.export...bn <- oilData$Trade.import...bn <- NULL
+balanceOfPayments$EoP <- as.Date(balanceOfPayments$EoP, "%m/%d/%y")
+date <- format(balanceOfPayments$EoP,'%Y')
+barplot(balanceOfPayments$Primary.income...bn, ylim=c(0,10), main="Primary Income, 2005-2017", xlab="date", ylab="bn, USD", names.arg=c(date))
